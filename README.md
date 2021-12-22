@@ -56,3 +56,5 @@ Use the below code to import the `Card Component` in your `entrty/src/main/js/de
 | likes           | null              | count of likes for the article                                                      |
 | views           | null              | count of article views                                                              |
 | btncolor        | null              | the text we specify here will display the background-color of the Read-More button  |
+
+Licensed under the [Apache License](LICENSE)
