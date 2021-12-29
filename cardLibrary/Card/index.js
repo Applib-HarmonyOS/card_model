@@ -3,23 +3,13 @@ import router from '@system.router';
 
 export default {
     data: {
-        container: "",
+        appointment_card: "",
         datetimevalue:"",
-        imageClass: '',
-        title: "",
-        subTitle: "",
-        textContainer: "",
-        bottomContainer: "",
-        pickerdatetime: "",
-        dateValue: "",
-        description: "",
-        topContainer: "",
-        bottomTextContainer:"",
-        like:"",
-        view:"",
-        valueContainer:"",
-        readMore:"",
-        readMoreText:"",
+        appointmentCard:false,
+        profile:false,
+        article:false,
+        container:"",
+        articleCard:"",
     },
     props:{
         type: "",
@@ -31,40 +21,26 @@ export default {
         views: "",
         btncolor:"",
         onClick:"",
+        user:"",
     },
     onInit() {
         if(this.type==="appointment-card"){
-            this.container="appointment-card";
-            this.imageClass="image";
-            this.title="name";
-            this.subTitle= "spec";
-            this.textContainer="textContainer";
-            this.bottomContainer="bottomContainer";
-            this.pickerdatetime="pickerdatetime";
-            this.dateValue="text";
-            this.topContainer="topContainer";
-            this.bottomTextContainer="bottomTextContainer";
-            this.valueContainer="valueContainerBlock";
-            this.readMore="readMoreBlock";
+            this.appointmentCard=true;
+            this.article=false;
+            this.profile=false;
+            this.appointment_card="appointment-card";
         }
         else if(this.type==="article"){
-            this.container="article";
-            this.imageClass="article_image";
-            this.title="title";
-            this.subTitle= "subTitle";
-            this.textContainer="articleTextContainer";
-            this.bottomContainer="bottomBlock";
-            this.pickerdatetime="pickerBlock";
-            this.dateValue="dateBlock";
-            this.description="description";
-            this.topContainer="articleTopContainer";
-            this.bottomTextContainer="articleBottomTextContainer"
-            this.like="like";
-            this.view="view";
-            this.valueContainer="valueContainer";
-            this.readMore="readMore";
-            this.readMoreText="readMoreText";
-            this.onClick="onClick";
+            this.appointmentCard=false;
+            this.article=true;
+            this.profile=false;
+            this.articleCard="article";
+        }
+        else if(this.type==="profile"){
+            this.appointmentCard=false;
+            this.article=false;
+            this.profile=true;
+            this.container="profile";
         }
     },
     datetimeonchange(e) {
